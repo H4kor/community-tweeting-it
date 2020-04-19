@@ -56,12 +56,18 @@ export default new Vuex.Store({
         return [];
       }
       const { release } = getters.episode(epIndex);
+      const releaseDate = new Date(release);
+      let prevReleaseDate: any = null;
+      if (getters.episode(epIndex - 1)) {
+        const prevRelease = getters.episode(epIndex - 1).release;
+        prevReleaseDate = new Date(prevRelease);
+      }
+
       return state.tweets.filter((t: Tweet) => {
-        const day = ('0' + t.created_at.getDate().toString()).slice(-2); // eslint-disable-line
-        const month = ('0' + (t.created_at.getMonth() + 1).toString()).slice(-2); // eslint-disable-line
-        const year = t.created_at.getFullYear().toString().slice(2);
-        const date = `${month}/${day}/${year}`;
-        return date === release;
+        if (prevReleaseDate !== null) {
+          return t.created_at < releaseDate && t.created_at > prevReleaseDate;
+        }
+        return t.created_at < releaseDate;
       });
     },
   },
