@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3110f00ad286af8a0178",
+    "revision": "7478a3990208848e2472",
     "url": "/community-tweeting-it/css/app.54ad435f.css"
   },
   {
@@ -80,7 +80,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/community-tweeting-it/img/logo.86d52600.png"
   },
   {
-    "revision": "e54dfc256704e8be5224a1c3531265d4",
+    "revision": "1e5fa7cce001b89a0216b6bced57cc1e",
     "url": "/community-tweeting-it/index.html"
   },
   {
@@ -88,8 +88,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/community-tweeting-it/js/about.ff9a61a1.js"
   },
   {
-    "revision": "3110f00ad286af8a0178",
-    "url": "/community-tweeting-it/js/app.97f5ec79.js"
+    "revision": "7478a3990208848e2472",
+    "url": "/community-tweeting-it/js/app.79a5b577.js"
   },
   {
     "revision": "f3a88877e0b195886fe1",
@@ -100,8 +100,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/community-tweeting-it/js/episode.1fe87e94.js"
   },
   {
-    "revision": "a41dff5a13755adbf458",
-    "url": "/community-tweeting-it/js/season.47724c1c.js"
+    "revision": "2eb2784f7704c9f508c5",
+    "url": "/community-tweeting-it/js/season.a269209a.js"
   },
   {
     "revision": "0a219b4f14d96a176a883eef831255a1",
