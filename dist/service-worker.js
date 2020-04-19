@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/community-tweeting-it/precache-manifest.a218d70a77240cc318aadfc17ea7123b.js"
+  "/community-tweeting-it/precache-manifest.e42d4f27b49bfc836d665ca404e0d616.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "community"});
