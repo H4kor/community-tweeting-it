@@ -13,21 +13,26 @@
       </router-link>
     </div>
     <br><br>
-    <div class="box-center" v-for="tweet in tweets" :key="tweet.id">
-      <blockquote class="twitter-tweet" data-lang="en">
-        <a :href="'https://twitter.com/'+tweet.screen_name" class="tweet-head">
-          <img :src="tweet.profile_image" :alt="tweet.name">
-          <p class="tweet-head-name">
-            {{tweet.name}}
+    <template v-if="tweets.length > 0">
+      <div class="box-center" v-for="tweet in tweets" :key="tweet.id">
+        <blockquote class="twitter-tweet" data-lang="en">
+          <a :href="'https://twitter.com/'+tweet.screen_name" class="tweet-head">
+            <img :src="tweet.profile_image" :alt="tweet.name">
+            <p class="tweet-head-name">
+              {{tweet.name}}
+            </p>
+          </a>
+          <p lang="en" dir="ltr">
+            {{tweet.text}}
           </p>
-        </a>
-        <p lang="en" dir="ltr">
-          {{tweet.text}}
-        </p>
-        &mdash; {{tweet.name}} (@{{tweet.screen_name}})
-        <a :href="'https://twitter.com/'+tweet.screen_name+'/status/'+tweet.id">{{tweet.created_at.toDateString()}}</a>
-      </blockquote>
-    </div>
+          &mdash; {{tweet.name}} (@{{tweet.screen_name}})
+          <a :href="'https://twitter.com/'+tweet.screen_name+'/status/'+tweet.id">{{tweet.created_at.toDateString()}}</a>
+        </blockquote>
+      </div>
+    </template>
+    <template v-else>
+      <h3> No tweets during this episode ;(</h3>
+    </template>
   </div>
 </template>
 

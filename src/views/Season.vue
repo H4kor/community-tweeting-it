@@ -23,7 +23,7 @@
             </router-link>
           </td>
           <td>{{ep.release}}</td>
-          <td>--</td>
+          <td>{{ep.tweets}}</td>
         </tr>
       </tbody>
     </table>
@@ -40,12 +40,19 @@ export default {
       return parseInt(this.$route.params.season, 10);
     },
     episodes() {
-      return this.$store.getters.seasonEpisodes(this.season);
+      return this.$store.getters.seasonEpisodes(this.season).map((e) => {
+        const ne = { ...e };
+        ne.tweets = this.$store.getters.episodeTweets(e.index).length;
+        console.log(ne);
+        return ne;
+      });
     },
   },
   created() {
     this.$store.dispatch('loadEpisodes');
     this.$store.dispatch('loadTweets');
+  },
+  methods: {
   },
 };
 </script>
