@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "819951f3d67e362d0505",
+    "revision": "52f8f22b27aa3ae96c7a",
     "url": "/community-tweeting-it/css/app.54ad435f.css"
   },
   {
-    "revision": "27e7ea59d2a97e1f0e84",
+    "revision": "f53c631eacb2b1a1d1dc",
     "url": "/community-tweeting-it/css/episode.91e99c48.css"
   },
   {
@@ -80,7 +80,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/community-tweeting-it/img/logo.86d52600.png"
   },
   {
-    "revision": "3c7efd77cdaeefdd52c5694afdae4f69",
+    "revision": "0d4a3077be9de5094f530add30527f80",
     "url": "/community-tweeting-it/index.html"
   },
   {
@@ -88,16 +88,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/community-tweeting-it/js/about.ff9a61a1.js"
   },
   {
-    "revision": "819951f3d67e362d0505",
-    "url": "/community-tweeting-it/js/app.3c096b93.js"
+    "revision": "52f8f22b27aa3ae96c7a",
+    "url": "/community-tweeting-it/js/app.3c2a5fa7.js"
   },
   {
     "revision": "557606c76591759560c6",
     "url": "/community-tweeting-it/js/chunk-vendors.a819a600.js"
   },
   {
-    "revision": "27e7ea59d2a97e1f0e84",
-    "url": "/community-tweeting-it/js/episode.594b990e.js"
+    "revision": "f53c631eacb2b1a1d1dc",
+    "url": "/community-tweeting-it/js/episode.c626adb0.js"
   },
   {
     "revision": "5922e6b49a9f1a933fcf",
