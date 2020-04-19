@@ -2,7 +2,9 @@
   <div id="app" class="container">
     <div class="row">
       <div class="column center">
-        <img src="@/assets/logo.png" alt="Community Tweeting It!">
+        <router-link :to="{name: 'Home'}">
+          <img src="@/assets/logo.png" alt="Community Tweeting It!">
+        </router-link>
       </div>
     </div>
     <SeasonList/>
