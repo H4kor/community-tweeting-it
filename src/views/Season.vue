@@ -43,7 +43,6 @@ export default {
       return this.$store.getters.seasonEpisodes(this.season).map((e) => {
         const ne = { ...e };
         ne.tweets = this.$store.getters.episodeTweets(e.index).length;
-        console.log(ne);
         return ne;
       });
     },
