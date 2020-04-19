@@ -3,6 +3,15 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+interface Episode {
+  season: number;
+  index: number;
+}
+
+interface Tweet {
+  created_at: Date;
+}
+
 export default new Vuex.Store({
   state: {
     episodes: [],
@@ -13,7 +22,7 @@ export default new Vuex.Store({
       Vue.set(state, 'episodes', episodes);
     },
     setTweets: (state, tweets) => {
-      Vue.set(state, 'tweets', tweets.map((t) => {
+      Vue.set(state, 'tweets', tweets.map((t: any) => {
         const nt = t;
         nt.created_at = new Date(t.created_at); // eslint-disable-line
         return nt;
@@ -35,15 +44,19 @@ export default new Vuex.Store({
     },
   },
   getters: {
-    seasons: (state) => [...new Set(state.episodes.map((x) => x.season))],
-    seasonEpisodes: (state) => (season) => state.episodes.filter((x) => x.season === season),
-    episode: (state) => (index) => state.episodes.find((x) => x.index === index) || null,
-    episodeTweets: (state, getters) => (epIndex) => {
+    seasons: (state) => [...new Set(state.episodes.map((x: Episode) => x.season))],
+    seasonEpisodes: (state) => (season: number) => state.episodes.filter(
+      (x: Episode) => x.season === season,
+    ),
+    episode: (state) => (index: number) => state.episodes.find(
+      (x: Episode) => x.index === index,
+    ) || null,
+    episodeTweets: (state, getters) => (epIndex: number) => {
       if (!getters.episode(epIndex)) {
         return [];
       }
       const { release } = getters.episode(epIndex);
-      return state.tweets.filter((t) => {
+      return state.tweets.filter((t: Tweet) => {
         const day = ('0' + t.created_at.getDate().toString()).slice(-2); // eslint-disable-line
         const month = ('0' + (t.created_at.getMonth() + 1).toString()).slice(-2); // eslint-disable-line
         const year = t.created_at.getFullYear().toString().slice(2);
