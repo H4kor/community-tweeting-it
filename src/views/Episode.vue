@@ -16,7 +16,7 @@
     <div class="box-center" v-for="tweet in tweets" :key="tweet.id">
       <blockquote class="twitter-tweet" data-lang="en">
         <a :href="'https://twitter.com/'+tweet.name" class="tweet-head">
-          <img :src="'/'+tweet.profile_image" :alt="tweet.name">
+          <img :src="tweet.profile_image" :alt="tweet.name">
           <p class="tweet-head-name">
             {{tweet.name}}
           </p>
