@@ -29,6 +29,15 @@
           <a :href="'https://twitter.com/'+tweet.screen_name+'/status/'+tweet.id">{{tweet.created_at.toDateString()}}</a>
         </blockquote>
       </div>
+      <div>
+        <router-link :to="{name: 'Episode', params: { episode: episodeIndex - 1}}">
+          Previous Episode
+        </router-link>
+        -
+        <router-link :to="{name: 'Episode', params: { episode: episodeIndex + 1}}">
+          Next Episode
+        </router-link>
+      </div>
     </template>
     <template v-else>
       <h3> No tweets during this episode ;(</h3>

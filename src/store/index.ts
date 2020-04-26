@@ -55,20 +55,26 @@ export default new Vuex.Store({
       if (!getters.episode(epIndex)) {
         return [];
       }
+
       const { release } = getters.episode(epIndex);
       const releaseDate = new Date(release);
-      let prevReleaseDate: any = null;
+      const top = new Date(releaseDate.setDate(releaseDate.getDate() + 1));
+
+      let bottom: Date|null = null;
       if (getters.episode(epIndex - 1)) {
         const prevRelease = getters.episode(epIndex - 1).release;
-        prevReleaseDate = new Date(prevRelease);
+        const prevReleaseDate = new Date(prevRelease);
+        bottom = new Date(prevReleaseDate.setDate(prevReleaseDate.getDate() + 1));
       }
 
-      return state.tweets.filter((t: Tweet) => {
-        if (prevReleaseDate !== null) {
-          return t.created_at < releaseDate && t.created_at > prevReleaseDate;
-        }
-        return t.created_at < releaseDate;
-      });
+      return state.tweets
+        .filter((t: Tweet) => {
+          if (bottom !== null) {
+            return t.created_at < top && t.created_at > bottom;
+          }
+          return t.created_at < top;
+        })
+        .sort((a: Tweet, b: Tweet) => a.created_at.getDate() - b.created_at.getDate());
     },
   },
 });
