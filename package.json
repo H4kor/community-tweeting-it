@@ -1,6 +1,6 @@
 {
   "name": "community",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -27,7 +27,7 @@
     "@vue/cli-plugin-router": "~4.3.0",
     "@vue/cli-plugin-typescript": "~4.3.0",
     "@vue/cli-plugin-vuex": "~4.3.0",
-    "@vue/cli-service": "~4.3.0",
+    "@vue/cli-service": "^4.3.1",
     "@vue/eslint-config-airbnb": "^5.0.2",
     "@vue/eslint-config-typescript": "^5.0.2",
     "eslint": "^6.7.2",
